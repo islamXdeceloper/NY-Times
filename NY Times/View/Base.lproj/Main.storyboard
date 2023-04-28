@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Medium.ttf">
+            <string>Quicksand-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NY_Times" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-kM-19g" customClass="TopNavigation" customModule="NY_Times" customModuleProvider="target">
+                                <rect key="frame" x="8" y="50" width="398" height="112"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CrT-4o-7Cf">
+                                <rect key="frame" x="8" y="162" width="398" height="734"/>
+                                <color key="backgroundColor" name="bg"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" name="bg"/>
+                                <color key="sectionIndexTrackingBackgroundColor" name="bg"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jiV-Qn-lfV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Nmu-zm-zs8"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Article Load" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtp-Og-m9K">
+                                <rect key="frame" x="144.5" y="442.5" width="125" height="21"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="18"/>
+                                <color key="textColor" name="gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="shadow"/>
+                        <constraints>
+                            <constraint firstItem="CrT-4o-7Cf" firstAttribute="leading" secondItem="KRT-kM-19g" secondAttribute="leading" id="AOm-5I-6XR"/>
+                            <constraint firstItem="CrT-4o-7Cf" firstAttribute="trailing" secondItem="KRT-kM-19g" secondAttribute="trailing" id="Ho7-qw-ixX"/>
+                            <constraint firstItem="KRT-kM-19g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="K4T-rn-rWB"/>
+                            <constraint firstItem="KRT-kM-19g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OZs-Cm-wBC"/>
+                            <constraint firstAttribute="trailing" secondItem="KRT-kM-19g" secondAttribute="trailing" constant="8" id="WEQ-UE-hyZ"/>
+                            <constraint firstItem="KRT-kM-19g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="XiF-3N-wJi"/>
+                            <constraint firstItem="Gtp-Og-m9K" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bNM-Uv-QMV"/>
+                            <constraint firstItem="KRT-kM-19g" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:8" id="jYr-vg-B7P"/>
+                            <constraint firstItem="CrT-4o-7Cf" firstAttribute="top" secondItem="KRT-kM-19g" secondAttribute="bottom" id="rMo-6h-E4o"/>
+                            <constraint firstItem="Gtp-Og-m9K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xYX-U2-wUx"/>
+                            <constraint firstAttribute="bottom" secondItem="CrT-4o-7Cf" secondAttribute="bottom" id="xhj-Vq-dHM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noArticleLb" destination="Gtp-Og-m9K" id="kWv-u4-0I1"/>
+                        <outlet property="tableView" destination="CrT-4o-7Cf" id="gVQ-Ao-xZf"/>
+                        <outlet property="topNavigation" destination="KRT-kM-19g" id="LKx-Kv-ZaQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="bg">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.50199997425079346" green="0.50199997425079346" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="shadow">
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

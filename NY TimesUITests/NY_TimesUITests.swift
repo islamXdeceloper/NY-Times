@@ -2,7 +2,7 @@
 //  NY_TimesUITests.swift
 //  NY TimesUITests
 //
-//  Created by Saeed Alshamsi on 27/04/2023.
+//  Created by Islam Ahmed on 27/04/2023.
 //
 
 import XCTest
